@@ -1,5 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/GD_Scenes/Sami_Scene.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
