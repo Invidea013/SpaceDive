@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
 
     public Rigidbody m_rigidbody;
     public Vector3 move;
+    public Slider oxBar;
 
     public float jetpackForce = 10f;
     public float jetpackDelay = 0f;
     public float moveSpeed = 5f;
-    public float oxFuel = 1f;
+    public float fuelUse = 0.0001f;
+    public float oxBreathe = 0.00001f;
 
     public int forceConst = 50;
 
@@ -38,7 +41,11 @@ public class PlayerMovement : MonoBehaviour
             canJump = false;
         }
 
+        oxBar.value -= oxBreathe;
+
         Jetpack();
+
+        PlayerPrefs.SetFloat("Fuel", fuelUse);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -62,11 +69,11 @@ public class PlayerMovement : MonoBehaviour
                 if (usingJetpack == true)
                 {
                     m_rigidbody.AddForce(0, jetpackForce * Time.deltaTime, 0, ForceMode.Force);
-                    oxFuel -= 0.0001f;
+                    oxBar.value -= fuelUse;
 
-                    if (oxFuel <= 0f)
+                    if (oxBar.value <= 0f)
                     {
-                        usingJetpack = false;
+                        Application.Quit();
                     }
                 }
             }
