@@ -20,8 +20,8 @@ public class CameraControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        yaw += speedH * Input.GetAxis("Mouse X") * Time.deltaTime;
-        pitch += speedV * Input.GetAxis("Mouse Y") * Time.deltaTime;
+        yaw += speedH * Input.GetAxisRaw("Mouse X") * Time.deltaTime;
+        pitch -= speedV * Input.GetAxisRaw("Mouse Y") * Time.deltaTime;
 
         transform.eulerAngles = new Vector3(pitch, yaw);
     }
