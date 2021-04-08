@@ -12,14 +12,25 @@ public class PlayerMovement : MonoBehaviour
 
     public float jetpackForce = 10f;
     public float jetpackDelay = 0f;
-    public float moveSpeed = 5f;
+    public float moveSpeed;
+    public float sprintSpeed = 10f;
+    public float moveSpeedBase = 5f;
     public float fuelUse = 0.0001f;
-    public float oxBreathe = 0.00001f;
+    public float oxBreatheBase = 0.00001f;
+    public float oxBreathe;
+    public float oxSprint = 0.00005f;
 
     public int forceConst = 50;
 
     public bool canJump = true;
     public bool usingJetpack = false;
+
+
+    void Start()
+    {
+        moveSpeed = moveSpeedBase;
+        oxBreathe = oxBreatheBase;
+    }
 
     void FixedUpdate()
     {
@@ -27,6 +38,18 @@ public class PlayerMovement : MonoBehaviour
 
         move.x = Input.GetAxisRaw("Horizontal");
         move.z = Input.GetAxisRaw("Vertical");
+
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            moveSpeed = sprintSpeed;
+            oxBreathe = 0.00005f;
+        }
+
+        else
+        {
+            moveSpeed = moveSpeedBase;
+            oxBreathe = oxBreatheBase;
+        }
 
         m_rigidbody.MovePosition(transform.position + (move * Time.fixedDeltaTime * moveSpeed));
 
