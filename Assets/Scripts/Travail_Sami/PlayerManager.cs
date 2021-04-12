@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
     public Slider oxBar;
     public CharacterController controller;
@@ -28,9 +28,11 @@ public class PlayerMovement : MonoBehaviour
     public float oxBreatheBase = 0.00001f;
     public float oxBreathe;
     public float oxSprint = 0.00005f;
+    public float oxTimeDelay = 3f;
 
     public bool canJump = true;
     public bool usingJetpack = false;
+    public bool consOx = true;
 
     public LayerMask groundMask;
 
@@ -44,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
     {
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        Debug.Log(isGrounded);
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -59,7 +60,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             moveSpeed = sprintSpeed;
-            oxBreathe = 0.00005f;
+            if(consOx)
+            {
+                oxBreathe = oxSprint;
+            }
         }
 
         else
@@ -79,9 +83,38 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        oxBar.value -= oxBreathe;
+        if (consOx == true)
+        {
+            oxBar.value -= oxBreathe;
+        }
+        
+        if(consOx == false)
+        {
+            oxTimeDelay -= Time.deltaTime;
+        }
+
+        if (oxTimeDelay <= 0f)
+        {
+            oxTimeDelay = 3f;
+            consOx = true;
+        }
 
         Jetpack();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Pickup_1") && oxBar.value < 1)
+        {
+            oxBar.value += 0.25f;
+            Destroy(other.gameObject);
+        }
+
+        if(other.CompareTag("Pickup_2"))
+        {
+            consOx = false;
+            Destroy(other.gameObject);
+        }
     }
 
     public void Jetpack()
@@ -97,7 +130,10 @@ public class PlayerMovement : MonoBehaviour
                 if (usingJetpack == true)
                 {
                     velocity.y = jetpackForce * Time.deltaTime;
-                    oxBar.value -= fuelUse;
+                    if (consOx)
+                    { 
+                        oxBar.value -= fuelUse; 
+                    }
                 }
             }
         }
