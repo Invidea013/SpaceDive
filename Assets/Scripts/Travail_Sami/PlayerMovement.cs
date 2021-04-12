@@ -5,26 +5,34 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    public Rigidbody m_rigidbody;
-    public Vector3 move;
     public Slider oxBar;
+    public CharacterController controller;
+    public Transform groundCheck;
+
+    public Vector3 velocity;
+    bool isGrounded;
 
     public float jetpackForce = 10f;
     public float jetpackDelay = 0f;
+
     public float moveSpeed;
     public float sprintSpeed = 10f;
     public float moveSpeedBase = 5f;
+    public float jumpHeight = 3f;
+
+    public float gravity = -9.81f;
+    public float groundDistance = 0.4f;
+
     public float fuelUse = 0.0001f;
+
     public float oxBreatheBase = 0.00001f;
     public float oxBreathe;
     public float oxSprint = 0.00005f;
 
-    public int forceConst = 50;
-
     public bool canJump = true;
     public bool usingJetpack = false;
 
+    public LayerMask groundMask;
 
     void Start()
     {
@@ -32,14 +40,23 @@ public class PlayerMovement : MonoBehaviour
         oxBreathe = oxBreatheBase;
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        move = Vector3.zero;
 
-        move.x = Input.GetAxisRaw("Horizontal");
-        move.z = Input.GetAxisRaw("Vertical");
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        Debug.Log(isGrounded);
 
-        if(Input.GetKey(KeyCode.LeftShift))
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        controller.Move(move * moveSpeed * Time.deltaTime);
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
+
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             moveSpeed = sprintSpeed;
             oxBreathe = 0.00005f;
@@ -51,37 +68,25 @@ public class PlayerMovement : MonoBehaviour
             oxBreathe = oxBreatheBase;
         }
 
-        m_rigidbody.MovePosition(transform.position + (move * Time.fixedDeltaTime * moveSpeed));
-
-        Jetpack();
-    }
-
-    void Update()
-    {
-        if (canJump == true && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded && velocity.y < 0)
         {
-            m_rigidbody.AddForce(0, forceConst * Time.deltaTime, 0, ForceMode.Impulse);
-            canJump = false;
+            velocity.y = 0f;
+            jetpackDelay = 0f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
         oxBar.value -= oxBreathe;
 
         Jetpack();
-
-        PlayerPrefs.SetFloat("Fuel", fuelUse);
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Ground") && canJump == false)
-        {
-            canJump = true;
-        }
     }
 
     public void Jetpack()
     {
-        if(Input.GetKey(KeyCode.Space) && canJump == false)
+        if(Input.GetKey(KeyCode.Space))
         {
             jetpackDelay += Time.deltaTime;
 
@@ -91,16 +96,17 @@ public class PlayerMovement : MonoBehaviour
 
                 if (usingJetpack == true)
                 {
-                    m_rigidbody.AddForce(0, jetpackForce * Time.deltaTime, 0, ForceMode.Force);
+                    velocity.y = jetpackForce * Time.deltaTime;
                     oxBar.value -= fuelUse;
-
-                    if (oxBar.value <= 0f)
-                    {
-                        Application.Quit();
-                    }
                 }
             }
         }
+
+        else
+        {
+            usingJetpack = false;
+        }
+
     }
 
 }

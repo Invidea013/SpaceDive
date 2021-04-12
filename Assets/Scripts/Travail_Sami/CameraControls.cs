@@ -5,24 +5,28 @@ using UnityEngine;
 public class CameraControls : MonoBehaviour
 {
 
-    public float speedH = 2f;
-    public float speedV = 2f;
+    public float mouseSensitivity = 100f;
 
-    public float yaw = 0f;
-    public float pitch = 0f;
+    public Transform p_body;
+
+    float xRotation = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        yaw += speedH * Input.GetAxisRaw("Mouse X") * Time.deltaTime;
-        pitch -= speedV * Input.GetAxisRaw("Mouse Y") * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity* Time.deltaTime;
 
-        transform.eulerAngles = new Vector3(pitch, yaw);
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        p_body.Rotate(Vector3.up * mouseX);
     }
 }
