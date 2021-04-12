@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - Ground
+  - Pickup_1
   layers:
   - Default
   - TransparentFX
