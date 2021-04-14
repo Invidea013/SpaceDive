@@ -233,6 +233,7 @@ MonoBehaviour:
   oxBar: {fileID: 1359478843}
   controller: {fileID: 137391177}
   groundCheck: {fileID: 246314933}
+  flashLight: {fileID: 396242775}
   velocity: {x: 0, y: 0, z: 0}
   jetpackForce: 5000
   jetpackDelay: 0
@@ -250,6 +251,7 @@ MonoBehaviour:
   canJump: 1
   usingJetpack: 0
   consOx: 1
+  flashOn: 0
   groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -382,7 +384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &396242776
 Transform:
   m_ObjectHideFlags: 0

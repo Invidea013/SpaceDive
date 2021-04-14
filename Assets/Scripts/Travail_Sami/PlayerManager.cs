@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
     public CharacterController controller;
     public Transform groundCheck;
 
+    public GameObject flashLight;
+
     public Vector3 velocity;
     bool isGrounded;
 
@@ -33,6 +35,7 @@ public class PlayerManager : MonoBehaviour
     public bool canJump = true;
     public bool usingJetpack = false;
     public bool consOx = true;
+    public bool flashOn = false;
 
     public LayerMask groundMask;
 
@@ -100,6 +103,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         Jetpack();
+        Flashlight();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -114,6 +118,21 @@ public class PlayerManager : MonoBehaviour
         {
             consOx = false;
             Destroy(other.gameObject);
+        }
+    }
+
+    public void Flashlight()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1) && flashOn == false)
+        {
+            flashLight.SetActive(true);
+            flashOn = true;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Mouse1) && flashOn == true)
+        {
+            flashLight.SetActive(false);
+            flashOn = false;
         }
     }
 
