@@ -142,13 +142,13 @@ public class PlayerManager : MonoBehaviour
         {
             jetpackDelay += Time.deltaTime;
 
-            if(jetpackDelay >= 1f)
+            if(jetpackDelay >= 0.35f)
             {
                 usingJetpack = true;
 
                 if (usingJetpack == true)
                 {
-                    velocity.y = jetpackForce * Time.deltaTime;
+                    velocity.y += jetpackForce * Time.deltaTime;
                     if (consOx)
                     { 
                         oxBar.value -= fuelUse; 
@@ -160,6 +160,7 @@ public class PlayerManager : MonoBehaviour
         else
         {
             usingJetpack = false;
+            velocity.y -= Time.deltaTime;
         }
 
     }
