@@ -165,4 +165,14 @@ public class PlayerManager : MonoBehaviour
 
     }
 
+    public void Victory()
+    {
+
+    }
+
+    public void Defeat()
+    {
+
+    }
+
 }
