@@ -171,33 +171,33 @@ public class PlayerManager : MonoBehaviour
 
     public void OxBarModif()
     {
-        if(oxBar.value <= 120)
+        if(oxBar.value <= 1.2)
         {
-            Debug.Log("Yes");
             oxUI.texture = oxTextures[0];
         }
 
-        else if(oxBar.value <= 100)
+        if(oxBar.value <= 1)
         {
+            Debug.Log("Yes");
             oxUI.texture = oxTextures[1];
         }
 
-        else if (oxBar.value <= 80)
+        if (oxBar.value <= 0.8)
         {
             oxUI.texture = oxTextures[2];
         }
 
-        else if (oxBar.value <= 60)
+        if (oxBar.value <= 0.6)
         {
             oxUI.texture = oxTextures[3];
         }
 
-        else if (oxBar.value <= 40)
+        if (oxBar.value <= 0.4)
         {
             oxUI.texture = oxTextures[4];
         }
 
-        else if (oxBar.value <= 20)
+        if (oxBar.value <= 0.2)
         {
             oxUI.texture = oxTextures[5];
         }
