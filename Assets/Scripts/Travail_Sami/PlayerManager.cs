@@ -8,8 +8,11 @@ public class PlayerManager : MonoBehaviour
     public Slider oxBar;
     public CharacterController controller;
     public Transform groundCheck;
+    public RawImage oxUI;
+    public Texture[] oxTextures;
 
     public GameObject flashLight;
+    public GameObject[] oxBars;
 
     public Vector3 velocity;
     bool isGrounded;
@@ -104,6 +107,7 @@ public class PlayerManager : MonoBehaviour
 
         Jetpack();
         Flashlight();
+        OxBarModif();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -163,6 +167,40 @@ public class PlayerManager : MonoBehaviour
             velocity.y -= Time.deltaTime;
         }
 
+    }
+
+    public void OxBarModif()
+    {
+        if(oxBar.value <= 120)
+        {
+            Debug.Log("Yes");
+            oxUI.texture = oxTextures[0];
+        }
+
+        else if(oxBar.value <= 100)
+        {
+            oxUI.texture = oxTextures[1];
+        }
+
+        else if (oxBar.value <= 80)
+        {
+            oxUI.texture = oxTextures[2];
+        }
+
+        else if (oxBar.value <= 60)
+        {
+            oxUI.texture = oxTextures[3];
+        }
+
+        else if (oxBar.value <= 40)
+        {
+            oxUI.texture = oxTextures[4];
+        }
+
+        else if (oxBar.value <= 20)
+        {
+            oxUI.texture = oxTextures[5];
+        }
     }
 
     public void Victory()
