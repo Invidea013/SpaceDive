@@ -28,5 +28,14 @@ public class ButtonManager : MonoBehaviour
         menuUI[0].SetActive(false);
         menuUI[1].SetActive(false);
         menuUI[2].SetActive(false);
+        optionUI[0].SetActive(true);
+    }
+
+    public void MenuReturn()
+    {
+        menuUI[0].SetActive(true);
+        menuUI[1].SetActive(true);
+        menuUI[2].SetActive(true);
+        optionUI[0].SetActive(false);
     }
 }

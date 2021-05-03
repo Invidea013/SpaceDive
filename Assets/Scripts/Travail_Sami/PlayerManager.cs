@@ -218,19 +218,23 @@ public class PlayerManager : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-            AudioList[0].Play();
+            if(!AudioList[0].isPlaying)
+            {
+                AudioList[0].Play();
+                Debug.Log("Hello");
+            }
             if(Input.GetKeyDown(KeyCode.LeftShift))
             {
                 AudioList[1].Play();
             }
             else
             {
-                AudioList[1].Pause();
+                AudioList[1].Stop();
             }
         }
         else
         {
-            AudioList[0].Pause();
+            AudioList[0].Stop();
         }
     }
 
@@ -242,7 +246,7 @@ public class PlayerManager : MonoBehaviour
             mapOn = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab) && mapOn == true)
+        else if (Input.GetKeyDown(KeyCode.Tab) && mapOn == true)
         {
             mapUI.SetActive(false);
             mapOn = false;
