@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -158,6 +159,7 @@ public class PlayerManager : MonoBehaviour
                 if (usingJetpack == true)
                 {
                     velocity.y += jetpackForce * Time.deltaTime;
+                    //AudioList[2].Play();
                     if (consOx)
                     { 
                         oxBar.value -= fuelUse; 
@@ -176,36 +178,36 @@ public class PlayerManager : MonoBehaviour
 
     public void OxBarModif()
     {
-        if(oxBar.value <= 1.2)
+        if(oxBar.value <= 1.2f)
         {
             oxUI.texture = oxTextures[0];
         }
 
-        if(oxBar.value <= 1)
+        if(oxBar.value <= 1f)
         {
             AudioList[5].Play();
             oxUI.texture = oxTextures[1];
         }
 
-        if (oxBar.value <= 0.8)
+        if (oxBar.value <= 0.8f)
         {
             AudioList[5].Play();
             oxUI.texture = oxTextures[2];
         }
 
-        if (oxBar.value <= 0.6)
+        if (oxBar.value <= 0.6f)
         {
             AudioList[5].Play();
             oxUI.texture = oxTextures[3];
         }
 
-        if (oxBar.value <= 0.4)
+        if (oxBar.value <= 0.4f)
         {
             AudioList[5].Play();
             oxUI.texture = oxTextures[4];
         }
 
-        if (oxBar.value <= 0.2)
+        if (oxBar.value <= 0.2f)
         {
             AudioList[5].Play();
             oxUI.texture = oxTextures[5];
@@ -254,7 +256,10 @@ public class PlayerManager : MonoBehaviour
 
     public void Defeat()
     {
-
+        if(oxBar.value <= 0f)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 
 }
