@@ -242,7 +242,7 @@ public class PlayerManager : MonoBehaviour
             mapOn = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab) && mapOn == true)
+        else if (Input.GetKeyDown(KeyCode.Tab) && mapOn == true)
         {
             mapUI.SetActive(false);
             mapOn = false;
