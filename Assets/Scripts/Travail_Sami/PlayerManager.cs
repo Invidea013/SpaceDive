@@ -11,7 +11,10 @@ public class PlayerManager : MonoBehaviour
     public RawImage oxUI;
     public Texture[] oxTextures;
 
+    public AudioSource[] AudioList;
+
     public GameObject flashLight;
+    public GameObject mapUI;
     public GameObject[] oxBars;
 
     public Vector3 velocity;
@@ -39,6 +42,7 @@ public class PlayerManager : MonoBehaviour
     public bool usingJetpack = false;
     public bool consOx = true;
     public bool flashOn = false;
+    public bool mapOn = false;
 
     public LayerMask groundMask;
 
@@ -50,7 +54,6 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         float x = Input.GetAxis("Horizontal");
@@ -66,7 +69,7 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             moveSpeed = sprintSpeed;
-            if(consOx)
+            if (consOx)
             {
                 oxBreathe = oxSprint;
             }
@@ -108,6 +111,8 @@ public class PlayerManager : MonoBehaviour
         Jetpack();
         Flashlight();
         OxBarModif();
+        MovementAudio();
+        MapRollup();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -178,28 +183,67 @@ public class PlayerManager : MonoBehaviour
 
         if(oxBar.value <= 1)
         {
-            Debug.Log("Yes");
+            AudioList[5].Play();
             oxUI.texture = oxTextures[1];
         }
 
         if (oxBar.value <= 0.8)
         {
+            AudioList[5].Play();
             oxUI.texture = oxTextures[2];
         }
 
         if (oxBar.value <= 0.6)
         {
+            AudioList[5].Play();
             oxUI.texture = oxTextures[3];
         }
 
         if (oxBar.value <= 0.4)
         {
+            AudioList[5].Play();
             oxUI.texture = oxTextures[4];
         }
 
         if (oxBar.value <= 0.2)
         {
+            AudioList[5].Play();
             oxUI.texture = oxTextures[5];
+        }
+    }
+
+    public void MovementAudio()
+    {
+        if(Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            AudioList[0].Play();
+            if(Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                AudioList[1].Play();
+            }
+            else
+            {
+                AudioList[1].Pause();
+            }
+        }
+        else
+        {
+            AudioList[0].Pause();
+        }
+    }
+
+    public void MapRollup()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab) && mapOn == false)
+        {
+            mapUI.SetActive(true);
+            mapOn = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab) && mapOn == true)
+        {
+            mapUI.SetActive(false);
+            mapOn = false;
         }
     }
 
