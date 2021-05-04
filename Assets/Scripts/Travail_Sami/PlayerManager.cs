@@ -155,11 +155,14 @@ public class PlayerManager : MonoBehaviour
             if(jetpackDelay >= 0.35f)
             {
                 usingJetpack = true;
+                if(!AudioList[2].isPlaying)
+                {
+                    AudioList[2].Play();
+                }
 
                 if (usingJetpack == true)
                 {
                     velocity.y += jetpackForce * Time.deltaTime;
-                    //AudioList[2].Play();
                     if (consOx)
                     { 
                         oxBar.value -= fuelUse; 
@@ -172,6 +175,7 @@ public class PlayerManager : MonoBehaviour
         {
             usingJetpack = false;
             velocity.y -= Time.deltaTime;
+            AudioList[2].Stop();
         }
 
     }
@@ -185,34 +189,30 @@ public class PlayerManager : MonoBehaviour
 
         if(oxBar.value <= 1f)
         {
-            AudioList[5].Play();
             oxUI.texture = oxTextures[1];
         }
 
         if (oxBar.value <= 0.8f)
         {
-            AudioList[5].Play();
             oxUI.texture = oxTextures[2];
         }
 
         if (oxBar.value <= 0.6f)
         {
-            AudioList[5].Play();
             oxUI.texture = oxTextures[3];
         }
 
         if (oxBar.value <= 0.4f)
         {
-            AudioList[5].Play();
             oxUI.texture = oxTextures[4];
         }
 
         if (oxBar.value <= 0.2f)
         {
-            AudioList[5].Play();
             oxUI.texture = oxTextures[5];
         }
     }
+
 
     public void MovementAudio()
     {
@@ -221,11 +221,16 @@ public class PlayerManager : MonoBehaviour
             if(!AudioList[0].isPlaying)
             {
                 AudioList[0].Play();
-                Debug.Log("Hello");
             }
-            if(Input.GetKeyDown(KeyCode.LeftShift))
+            if(Input.GetKey(KeyCode.LeftShift))
             {
-                AudioList[1].Play();
+                AudioList[0].Stop();
+                Debug.Log("Hello");
+
+                if (!AudioList[1].isPlaying)
+                {
+                    AudioList[1].Play();
+                }
             }
             else
             {
