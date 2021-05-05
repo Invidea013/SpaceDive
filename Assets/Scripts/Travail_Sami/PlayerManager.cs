@@ -218,28 +218,37 @@ public class PlayerManager : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-            if(!AudioList[0].isPlaying)
+            if (!AudioList[0].isPlaying)
             {
                 AudioList[0].Play();
             }
-            if(Input.GetKey(KeyCode.LeftShift))
+
+            if (Input.GetKey(KeyCode.LeftShift))
             {
                 AudioList[0].Stop();
                 Debug.Log("Hello");
-
+                    
                 if (!AudioList[1].isPlaying)
                 {
                     AudioList[1].Play();
                 }
             }
-            else
-            {
-                AudioList[1].Stop();
-            }
         }
+
         else
         {
             AudioList[0].Stop();
+        }
+
+        if (isGrounded == false)
+        {
+            AudioList[0].Stop();
+            AudioList[1].Stop();
+        }
+
+        if(AudioList[0].isPlaying)
+        {
+            AudioList[1].Stop();
         }
     }
 
