@@ -14,10 +14,13 @@ public class PlayerManager : MonoBehaviour
 
     public AudioSource[] AudioList;
     public AudioClip injection;
+    public AudioClip KiryuChan;
 
     public GameObject flashLight;
     public GameObject mapUI;
     public GameObject[] oxBars;
+
+    public Animator FlashlightAnim;
 
     public Vector3 velocity;
     bool isGrounded;
@@ -139,12 +142,14 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1) && flashOn == false)
         {
             flashLight.SetActive(true);
+            FlashlightAnim.SetTrigger("isActive");
             flashOn = true;
         }
 
         else if (Input.GetKeyDown(KeyCode.Mouse1) && flashOn == true)
         {
             flashLight.SetActive(false);
+            FlashlightAnim.SetTrigger("isActive");
             flashOn = false;
         }
     }
@@ -215,7 +220,6 @@ public class PlayerManager : MonoBehaviour
             oxUI.texture = oxTextures[5];
         }
     }
-
 
     public void MovementAudio()
     {
