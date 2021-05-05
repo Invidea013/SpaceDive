@@ -211,6 +211,11 @@ public class PlayerManager : MonoBehaviour
         {
             oxUI.texture = oxTextures[5];
         }
+
+        else
+        {
+            AudioList[5].Stop();
+        }
     }
 
 
@@ -267,17 +272,17 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void Victory()
+    /*public void Victory()
     {
 
-    }
+    }*/
 
-    public void Defeat()
+    /*public void Defeat()
     {
         if(oxBar.value <= 0f)
         {
             SceneManager.LoadScene(3);
         }
-    }
+    }*/
 
 }
