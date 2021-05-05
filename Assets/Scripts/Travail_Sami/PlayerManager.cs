@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     public Texture[] oxTextures;
 
     public AudioSource[] AudioList;
+    public AudioClip injection;
 
     public GameObject flashLight;
     public GameObject mapUI;
@@ -118,15 +119,17 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Pickup_1") && oxBar.value < 1)
+        if(other.CompareTag("Pickup_1") && oxBar.value < 1.2f && !AudioList[5].isPlaying)
         {
-            oxBar.value += 0.25f;
+            oxBar.value += 0.2f;
+            AudioList[5].PlayOneShot(injection);
             Destroy(other.gameObject);
         }
 
-        if(other.CompareTag("Pickup_2"))
+        if(other.CompareTag("Pickup_2") && !AudioList[5].isPlaying)
         {
             consOx = false;
+            AudioList[5].PlayOneShot(injection);
             Destroy(other.gameObject);
         }
     }
@@ -210,11 +213,6 @@ public class PlayerManager : MonoBehaviour
         if (oxBar.value <= 0.2f)
         {
             oxUI.texture = oxTextures[5];
-        }
-
-        else
-        {
-            AudioList[5].Stop();
         }
     }
 
