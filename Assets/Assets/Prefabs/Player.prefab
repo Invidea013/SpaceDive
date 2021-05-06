@@ -129,11 +129,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ClipList:
   - {fileID: 8300000, guid: 46e167569022bd349be60a0321ac2dfb, type: 3}
   - {fileID: 8300000, guid: e377011a76c1e274e86f4ebb8671b548, type: 3}
   - {fileID: 8300000, guid: e7b636731d7763a4aaa50344ba9e0a0a, type: 3}
   - {fileID: 8300000, guid: b99ef2034e687b34fbadc6e310d717f7, type: 3}
+  - {fileID: 8300000, guid: 8b6852853dd79a24daa8560e8ac63fa1, type: 3}
+  - {fileID: 8300000, guid: 9382784da047de34495bd373e7c01547, type: 3}
   flashLight: {fileID: 1837440297860134429}
   mapUI: {fileID: 0}
   oxBars: []
@@ -252,7 +257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837440297860134429}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0}
-  m_LocalPosition: {x: 0, y: 0, z: -1.9500003}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 5139150311724138116}
@@ -267,16 +272,16 @@ Light:
   m_GameObject: {fileID: 1837440297860134429}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 2
+  m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 5
-  m_SpotAngle: 20
+  m_Intensity: 3
+  m_Range: 7.468128
+  m_SpotAngle: 66.506065
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
