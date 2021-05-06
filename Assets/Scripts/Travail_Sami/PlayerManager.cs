@@ -13,8 +13,7 @@ public class PlayerManager : MonoBehaviour
     public Texture[] oxTextures;
 
     public AudioSource[] AudioList;
-    public AudioClip injection;
-    public AudioClip KiryuChan;
+    public AudioClip[] ClipList;
 
     public GameObject flashLight;
     public GameObject mapUI;
@@ -125,14 +124,14 @@ public class PlayerManager : MonoBehaviour
         if(other.CompareTag("Pickup_1") && oxBar.value < 1.2f && !AudioList[5].isPlaying)
         {
             oxBar.value += 0.2f;
-            AudioList[5].PlayOneShot(injection);
+            AudioList[5].PlayOneShot(ClipList[0]);
             Destroy(other.gameObject);
         }
 
         if(other.CompareTag("Pickup_2") && !AudioList[5].isPlaying)
         {
             consOx = false;
-            AudioList[5].PlayOneShot(injection);
+            AudioList[5].PlayOneShot(ClipList[0]);
             Destroy(other.gameObject);
         }
     }
