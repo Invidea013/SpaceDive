@@ -172,6 +172,10 @@ public class PlayerManager : MonoBehaviour
                 if (usingJetpack == true)
                 {
                     velocity.y += jetpackForce * Time.deltaTime;
+                    if(velocity.y >= 9f)
+                    {
+                        velocity.y = 9f;
+                    }
                     if (consOx)
                     { 
                         oxBar.value -= fuelUse; 
