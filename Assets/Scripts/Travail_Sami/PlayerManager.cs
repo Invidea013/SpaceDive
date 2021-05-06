@@ -13,8 +13,7 @@ public class PlayerManager : MonoBehaviour
     public Texture[] oxTextures;
 
     public AudioSource[] AudioList;
-    public AudioClip injection;
-    public AudioClip KiryuChan;
+    public AudioClip[] ClipList;
 
     public GameObject flashLight;
     public GameObject mapUI;
@@ -125,14 +124,14 @@ public class PlayerManager : MonoBehaviour
         if(other.CompareTag("Pickup_1") && oxBar.value < 1.2f && !AudioList[5].isPlaying)
         {
             oxBar.value += 0.2f;
-            AudioList[5].PlayOneShot(injection);
+            AudioList[5].PlayOneShot(ClipList[0]);
             Destroy(other.gameObject);
         }
 
         if(other.CompareTag("Pickup_2") && !AudioList[5].isPlaying)
         {
             consOx = false;
-            AudioList[5].PlayOneShot(injection);
+            AudioList[5].PlayOneShot(ClipList[0]);
             Destroy(other.gameObject);
         }
     }
@@ -143,6 +142,7 @@ public class PlayerManager : MonoBehaviour
         {
             flashLight.SetActive(true);
             FlashlightAnim.SetTrigger("isActive");
+            AudioList[8].PlayOneShot(ClipList[4]);
             flashOn = true;
         }
 
@@ -150,6 +150,7 @@ public class PlayerManager : MonoBehaviour
         {
             flashLight.SetActive(false);
             FlashlightAnim.SetTrigger("isActive");
+            AudioList[9].PlayOneShot(ClipList[5]);
             flashOn = false;
         }
     }
@@ -171,6 +172,10 @@ public class PlayerManager : MonoBehaviour
                 if (usingJetpack == true)
                 {
                     velocity.y += jetpackForce * Time.deltaTime;
+                    if(velocity.y >= 9f)
+                    {
+                        velocity.y = 9f;
+                    }
                     if (consOx)
                     { 
                         oxBar.value -= fuelUse; 
