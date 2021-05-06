@@ -142,6 +142,7 @@ public class PlayerManager : MonoBehaviour
         {
             flashLight.SetActive(true);
             FlashlightAnim.SetTrigger("isActive");
+            AudioList[8].PlayOneShot(ClipList[4]);
             flashOn = true;
         }
 
@@ -149,6 +150,7 @@ public class PlayerManager : MonoBehaviour
         {
             flashLight.SetActive(false);
             FlashlightAnim.SetTrigger("isActive");
+            AudioList[9].PlayOneShot(ClipList[5]);
             flashOn = false;
         }
     }
