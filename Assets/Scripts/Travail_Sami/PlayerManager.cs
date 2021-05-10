@@ -42,8 +42,6 @@ public class PlayerManager : MonoBehaviour
     public float oxSprint = 0.00005f;
     public float oxTimeDelay = 3f;
 
-    private int OxBarNumber = 6;
-
     public bool canJump = true;
     public bool usingJetpack = false;
     public bool consOx = true;
@@ -112,11 +110,6 @@ public class PlayerManager : MonoBehaviour
         {
             oxTimeDelay = 3f;
             consOx = true;
-        }
-
-        if (OxBarNumber == 1)
-        {
-            AudioList[7].PlayOneShot(ClipList[1]);
         }
 
         Jetpack();
@@ -205,42 +198,31 @@ public class PlayerManager : MonoBehaviour
         if(oxBar.value <= 1.2f)
         {
             oxUI.texture = oxTextures[0];
-            OxBarNumber = 6;
         }
 
         if(oxBar.value <= 1f)
         {
             oxUI.texture = oxTextures[1];
-            OxBarNumber = 5;
         }
 
         if (oxBar.value <= 0.8f)
         {
             oxUI.texture = oxTextures[2];
-            OxBarNumber = 4;
         }
 
         if (oxBar.value <= 0.6f)
         {
             oxUI.texture = oxTextures[3];
-            OxBarNumber = 3;
         }
 
         if (oxBar.value <= 0.4f)
         {
             oxUI.texture = oxTextures[4];
-            OxBarNumber = 2;
         }
 
         if (oxBar.value <= 0.2f)
         {
             oxUI.texture = oxTextures[5];
-            OxBarNumber = 1;
-        }
-        
-        if(oxBar.value <= 0.199f)
-        {
-            OxBarNumber = 0;
         }
     }
 
