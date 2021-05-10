@@ -306,6 +306,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -35.3
       objectReference: {fileID: 0}
+    - target: {fileID: 1837440297531782403, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
+      propertyPath: m_SlopeLimit
+      value: 46
+      objectReference: {fileID: 0}
     - target: {fileID: 7243315010551981344, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_Name
       value: Player
