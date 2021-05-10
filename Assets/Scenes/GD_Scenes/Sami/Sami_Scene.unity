@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18802
+  m_Name: pb_Mesh18170
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3820,6 +3820,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &3643759865998084892
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3643759865397407412, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
+      propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643759865397407414, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643759865397407414, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643759865397407414, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.1000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643759865397407414, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -45.100002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643759865397407414, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643759865397407414, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643759865397407414, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643759865397407414, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643759865397407414, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643759865397407414, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643759865397407414, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
 --- !u!1001 &7243315010414627176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3839,14 +3896,6 @@ PrefabInstance:
       propertyPath: oxBar
       value: 
       objectReference: {fileID: 1359478843}
-    - target: {fileID: 1837440297531782406, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
-      propertyPath: ClipList.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 9f2e535a401519e47a9eb7cb94fb2fbe, type: 3}
-    - target: {fileID: 1837440297531782406, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
-      propertyPath: ClipList.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 7374f6966c9411b40aadca2b899bc0dd, type: 3}
     - target: {fileID: 1837440297531782406, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: AudioList.Array.data[0]
       value: 
@@ -3917,11 +3966,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1837440297860134419, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_Range
-      value: 7.5
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1837440297860134419, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_SpotAngle
-      value: 66.5
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 1837440297860134429, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_IsActive
