@@ -7,11 +7,15 @@ public class DoorAnim : MonoBehaviour
 
     public Animator doorAnim;
 
+    public AudioSource[] doorSource;
+    public AudioClip[] doorClips;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
             doorAnim.SetTrigger("isOpening");
+            doorSource[0].PlayOneShot(doorClips[0]);
         }
     }
 
@@ -20,6 +24,7 @@ public class DoorAnim : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             doorAnim.SetTrigger("isClosing");
+            doorSource[1].PlayOneShot(doorClips[1]);
         }
     }
 }

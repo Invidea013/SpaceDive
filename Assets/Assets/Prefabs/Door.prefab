@@ -80,6 +80,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorAnim: {fileID: 3643759865397407413}
+  doorSource:
+  - {fileID: 0}
+  - {fileID: 0}
+  doorClips:
+  - {fileID: 8300000, guid: cd8bcc4c521267945897fdf4f00f3422, type: 3}
+  - {fileID: 8300000, guid: e91ea5c935a47e34da35f88d2b719a07, type: 3}
 --- !u!65 &5189118756969111073
 BoxCollider:
   m_ObjectHideFlags: 0
