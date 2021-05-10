@@ -4068,26 +4068,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 927115374937927596, guid: 40799d41e2afa4d4fb615a7a125d7799, type: 3}
-      propertyPath: m_Height
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 927115374937927596, guid: 40799d41e2afa4d4fb615a7a125d7799, type: 3}
-      propertyPath: m_Radius
-      value: 0.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 927115374937927596, guid: 40799d41e2afa4d4fb615a7a125d7799, type: 3}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 927115374937927596, guid: 40799d41e2afa4d4fb615a7a125d7799, type: 3}
-      propertyPath: m_Center.y
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 927115374937927596, guid: 40799d41e2afa4d4fb615a7a125d7799, type: 3}
-      propertyPath: m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8532482684672897340, guid: 40799d41e2afa4d4fb615a7a125d7799, type: 3}
       propertyPath: m_Name
       value: Capsule
@@ -4095,18 +4075,6 @@ PrefabInstance:
     - target: {fileID: 9016953468709579654, guid: 40799d41e2afa4d4fb615a7a125d7799, type: 3}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9016953468709579654, guid: 40799d41e2afa4d4fb615a7a125d7799, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9016953468709579654, guid: 40799d41e2afa4d4fb615a7a125d7799, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9016953468709579654, guid: 40799d41e2afa4d4fb615a7a125d7799, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9016953468709579654, guid: 40799d41e2afa4d4fb615a7a125d7799, type: 3}
       propertyPath: m_LocalPosition.x
