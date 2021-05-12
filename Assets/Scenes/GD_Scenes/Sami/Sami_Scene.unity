@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30666
+  m_Name: pb_Mesh38584
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1946,10 +1946,6 @@ PrefabInstance:
     - target: {fileID: 1837440297860134429, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3752217253151050656, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4329338348718855804, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_Materials.Array.data[0]
