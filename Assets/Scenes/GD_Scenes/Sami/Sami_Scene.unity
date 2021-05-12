@@ -315,11 +315,6 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 2533835050426650883, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
   m_PrefabInstance: {fileID: 7243315010414627176}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &263886857 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1345667576050892873, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
-  m_PrefabInstance: {fileID: 7243315010414627176}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &479946392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6024863969016441498, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
@@ -1763,11 +1758,6 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaDirect: 0.5
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
---- !u!82 &1862625293 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 871439704657986069, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
-  m_PrefabInstance: {fileID: 7243315010414627176}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3643759865998084892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1775,14 +1765,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3643759865397407408, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
-      propertyPath: doorSource.Array.data[0]
-      value: 
-      objectReference: {fileID: 263886857}
-    - target: {fileID: 3643759865397407408, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
-      propertyPath: doorSource.Array.data[1]
-      value: 
-      objectReference: {fileID: 1862625293}
     - target: {fileID: 3643759865397407412, guid: bb164defbd3a79e44a6dcddd61dc9f02, type: 3}
       propertyPath: m_Name
       value: Door
