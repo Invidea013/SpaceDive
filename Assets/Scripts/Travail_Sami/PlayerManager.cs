@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     public Slider oxBar;
     public CharacterController controller;
     public Transform groundCheck;
+    public Image fadeIn;
     public RawImage oxUI;
     public Texture[] oxTextures;
 
@@ -43,6 +44,7 @@ public class PlayerManager : MonoBehaviour
     public float oxTimeDelay = 3f;
 
     private int OxBarNumber = 6;
+    private float timer = 0f;
 
     public bool canJump = true;
     public bool usingJetpack = false;
@@ -61,6 +63,8 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        timer += Time.deltaTime;
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -117,6 +121,11 @@ public class PlayerManager : MonoBehaviour
         if (OxBarNumber == 1)
         {
             AudioList[7].PlayOneShot(ClipList[1]);
+        }
+
+        if(timer >= 1f)
+        {
+            Destroy(fadeIn);
         }
 
         Jetpack();
