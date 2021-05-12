@@ -171,18 +171,21 @@ public class PlayerManager : MonoBehaviour
             if(jetpackDelay >= 0.35f)
             {
                 usingJetpack = true;
-                if(!AudioList[2].isPlaying)
-                {
-                    AudioList[2].Play();
-                }
 
                 if (usingJetpack == true)
                 {
                     velocity.y += jetpackForce * Time.deltaTime;
-                    if(velocity.y >= 9f)
+
+                    if (!AudioList[2].isPlaying)
+                    {
+                        AudioList[2].Play();
+                    }
+
+                    if (velocity.y >= 9f)
                     {
                         velocity.y = 9f;
                     }
+
                     if (consOx)
                     { 
                         oxBar.value -= fuelUse; 
