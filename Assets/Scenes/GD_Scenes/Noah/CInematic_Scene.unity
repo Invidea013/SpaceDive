@@ -166,7 +166,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8d0436ad4d2ef3844a4e3b6f82199eee, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -326,8 +326,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: be27f22a4f02f2348b74b04072f9b69a, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -653,7 +653,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c1aca0a7ed4fe7a4e9f6cbb7fe256e1a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -852,7 +852,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3c5b216f0af8f5e4eb27fbc57382facb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -979,7 +979,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ecce0969be9e457448a82e1e5f5b9959, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1416,7 +1416,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8d0436ad4d2ef3844a4e3b6f82199eee, type: 3}
   - {fileID: 8300000, guid: c1aca0a7ed4fe7a4e9f6cbb7fe256e1a, type: 3}
   - {fileID: 8300000, guid: d6caa1cdf3eddb943acc48c251ba551d, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: ecce0969be9e457448a82e1e5f5b9959, type: 3}
   - {fileID: 8300000, guid: 3c5b216f0af8f5e4eb27fbc57382facb, type: 3}
   - {fileID: 8300000, guid: 32a05766fbf1a2a4e8aa3a6d1a570eba, type: 3}
 --- !u!1 &1692089426
@@ -1462,7 +1462,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d6caa1cdf3eddb943acc48c251ba551d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1661,7 +1661,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 32a05766fbf1a2a4e8aa3a6d1a570eba, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

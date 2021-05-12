@@ -10,49 +10,57 @@ public class Cinematic_Config : MonoBehaviour
     public AudioClip[] cinematicClips;
 
     private float Timer;
-
-    void Start()
-    {
-        cinematicSources[0].Play();
-    }
+    private float timeSec;
 
     void Update()
     {
         Timer += Time.deltaTime;
-
-        if (Timer >= 5f)
+        if(Timer >= 1f)
         {
-            Cinematics[0].SetActive(true);
-            cinematicSources[1].Play();
+            timeSec++;
+            Timer = 0f;
         }
 
-        if (Timer >= 10f)
+        Cinematic();
+    }
+
+    public void Cinematic()
+    {
+        if (timeSec == 5)
+        {
+            Cinematics[0].SetActive(true);
+            if(!cinematicSources[1].isPlaying)
+            {
+                cinematicSources[1].Play();
+            }
+        }
+
+        if (timeSec == 10)
         {
             Cinematics[1].SetActive(true);
 
             cinematicSources[1].Stop();
-            cinematicSources[2].PlayOneShot(cinematicClips[2]);
+            if(!cinematicSources[2].isPlaying)
+            {
+                cinematicSources[2].PlayOneShot(cinematicClips[2]);
+            }
         }
 
-        if(Timer >= 11f)
+        if (timeSec == 11)
         {
-            cinematicSources[3].PlayOneShot(cinematicClips[3]);
+            if(!cinematicSources[3].isPlaying && !cinematicSources[4].isPlaying && !cinematicSources[5].isPlaying && !cinematicSources[6].isPlaying)
+            {
+                cinematicSources[3].PlayOneShot(cinematicClips[3]);
+                cinematicSources[4].PlayOneShot(cinematicClips[4]);
+                cinematicSources[5].PlayOneShot(cinematicClips[5]);
+                cinematicSources[6].PlayOneShot(cinematicClips[6]);
+            }
         }
 
-        if(Timer >= 11.5f)
-        {
-            cinematicSources[4].PlayOneShot(cinematicClips[4]);
-            cinematicSources[5].PlayOneShot(cinematicClips[5]);
-        }
-
-        if(Timer >= 12f)
-        {
-            cinematicSources[6].PlayOneShot(cinematicClips[6]);
-        }
-
-        if (Timer >= 13f)
+        if (timeSec == 13f)
         {
             SceneManager.LoadScene(2);
         }
     }
+
 }
