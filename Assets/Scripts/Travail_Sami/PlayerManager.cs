@@ -43,8 +43,7 @@ public class PlayerManager : MonoBehaviour
     public float oxSprint = 0.00005f;
     public float oxTimeDelay = 3f;
 
-    private int OxBarNumber = 6;
-    private float timer = 0f;
+    public int OxBarNumber = 6;
 
     public bool canJump = true;
     public bool usingJetpack = false;
@@ -58,13 +57,13 @@ public class PlayerManager : MonoBehaviour
     {
         moveSpeed = moveSpeedBase;
         oxBreathe = oxBreatheBase;
+
+        Destroy(fadeIn, 1f);
     }
 
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        timer += Time.deltaTime;
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -121,11 +120,6 @@ public class PlayerManager : MonoBehaviour
         if (OxBarNumber == 1)
         {
             AudioList[7].PlayOneShot(ClipList[1]);
-        }
-
-        if(timer >= 1f)
-        {
-            Destroy(fadeIn);
         }
 
         Jetpack();
@@ -250,9 +244,14 @@ public class PlayerManager : MonoBehaviour
             OxBarNumber = 1;
         }
         
-        if(oxBar.value <= 0.199f)
+        if(oxBar.value <= 0f)
         {
+            oxUI.texture = oxTextures[6];
             OxBarNumber = 0;
+
+            AudioList[0].Stop();
+            AudioList[1].Stop();
+            AudioList[2].Stop();
         }
     }
 
@@ -268,7 +267,6 @@ public class PlayerManager : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 AudioList[0].Stop();
-                Debug.Log("Hello");
                     
                 if (!AudioList[1].isPlaying)
                 {
@@ -308,18 +306,5 @@ public class PlayerManager : MonoBehaviour
             mapOn = false;
         }
     }
-
-    /*public void Victory()
-    {
-
-    }*/
-
-    /*public void Defeat()
-    {
-        if(oxBar.value <= 0f)
-        {
-            SceneManager.LoadScene(3);
-        }
-    }*/
 
 }
