@@ -39,6 +39,7 @@ public class Death : MonoBehaviour
             {
                 fadeOut.SetActive(true);
                 playerManager.AudioList[10].Stop();
+                deathAnim.SetTrigger("isDead");
             }
 
             if(timer >= 6f)
