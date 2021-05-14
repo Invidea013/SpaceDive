@@ -246,7 +246,12 @@ public class PlayerManager : MonoBehaviour
         
         if(oxBar.value <= 0f)
         {
+            oxUI.texture = oxTextures[6];
             OxBarNumber = 0;
+
+            AudioList[0].Stop();
+            AudioList[1].Stop();
+            AudioList[2].Stop();
         }
     }
 

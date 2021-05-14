@@ -26,7 +26,16 @@ public class Victory : MonoBehaviour
         if(victory == true)
         {
             timer += Time.deltaTime;
+
             fadeOut.SetActive(true);
+
+            playerManager.AudioList[0].Stop();
+            playerManager.AudioList[1].Stop();
+
+            if(!playerManager.AudioList[11].isPlaying)
+            {
+                playerManager.AudioList[11].PlayOneShot(playerManager.ClipList[7]);
+            }
 
             if(timer >= 1f)
             {
@@ -38,6 +47,11 @@ public class Victory : MonoBehaviour
                 victoryUI[3].SetActive(true);
 
                 Cursor.lockState = CursorLockMode.None;
+            }
+
+            if(timer >= 1.4f)
+            {
+                playerManager.AudioList[11].Stop();
             }
 
             if (timer >= 2f)

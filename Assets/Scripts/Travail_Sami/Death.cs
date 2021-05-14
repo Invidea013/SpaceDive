@@ -11,6 +11,8 @@ public class Death : MonoBehaviour
     public GameObject defeatUI;
     public GameObject fadeOut;
 
+    public Animator deathAnim;
+
     private float timer;
 
     // Start is called before the first frame update
@@ -22,19 +24,30 @@ public class Death : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerManager.oxBar.value <= 0f)
+        if(playerManager.OxBarNumber == 0)
         {
             playerManager.enabled = false;
             timer += Time.deltaTime;
-            fadeOut.SetActive(true);
+            deathAnim.SetTrigger("isDying");
 
-            if(timer >= 1f)
+            if(!playerManager.AudioList[10].isPlaying)
+            {
+                playerManager.AudioList[10].PlayOneShot(playerManager.ClipList[6]);
+            }
+
+            if(timer >= 4f)
+            {
+                fadeOut.SetActive(true);
+                playerManager.AudioList[10].Stop();
+            }
+
+            if(timer >= 6f)
             {
                 playerUI.SetActive(false);
                 defeatUI.SetActive(true);
-            }
 
-            Destroy(fadeOut, 3f);
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
     }
 }
