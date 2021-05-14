@@ -57,7 +57,7 @@ public class Cinematic_Config : MonoBehaviour
             }
         }
 
-        if (timeSec == 13f)
+        if (timeSec == 15f)
         {
             SceneManager.LoadScene(2);
         }
