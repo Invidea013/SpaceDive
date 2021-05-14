@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Pickup_1
   - Pickup_2
+  - Victory
   layers:
   - Default
   - TransparentFX
