@@ -31,8 +31,9 @@ public class Victory : MonoBehaviour
 
             playerManager.AudioList[0].Stop();
             playerManager.AudioList[1].Stop();
+            playerManager.AudioList[2].Stop();
 
-            if(!playerManager.AudioList[11].isPlaying)
+            if (!playerManager.AudioList[11].isPlaying)
             {
                 playerManager.AudioList[11].PlayOneShot(playerManager.ClipList[7]);
             }
