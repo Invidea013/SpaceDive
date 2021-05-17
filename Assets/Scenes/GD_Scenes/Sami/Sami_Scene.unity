@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21074
+  m_Name: pb_Mesh30750
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2290,17 +2290,6 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 2959484862156888497, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
   m_PrefabInstance: {fileID: 7243315010414627176}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1279309843 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4112998437272218926, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
-  m_PrefabInstance: {fileID: 7243315010414627176}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1359478843 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3158353428211714407, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
@@ -3112,6 +3101,38 @@ PrefabInstance:
       propertyPath: defeatUI
       value: 
       objectReference: {fileID: 1631113884}
+    - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -762
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 234
+      objectReference: {fileID: 0}
     - target: {fileID: 1837440297531782400, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3250,19 +3271,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5488846068466181755, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -1520
+      value: -1512
       objectReference: {fileID: 0}
     - target: {fileID: 5488846068466181755, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -880
+      value: -813
       objectReference: {fileID: 0}
     - target: {fileID: 5488846068466181755, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -548
+      value: -544
       objectReference: {fileID: 0}
     - target: {fileID: 5488846068466181755, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 427
+      value: 393.5
       objectReference: {fileID: 0}
     - target: {fileID: 5580720172967373421, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_IsActive
@@ -3335,7 +3356,7 @@ PrefabInstance:
     - target: {fileID: 7243315010551981348, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: oxUI
       value: 
-      objectReference: {fileID: 1279309843}
+      objectReference: {fileID: 0}
     - target: {fileID: 7243315010551981348, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: mapUI
       value: 
