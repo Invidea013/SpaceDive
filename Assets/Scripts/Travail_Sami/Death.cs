@@ -6,10 +6,12 @@ public class Death : MonoBehaviour
 {
 
     public PlayerManager playerManager;
+    public CameraControls cameraControls;
 
     public GameObject playerUI;
     public GameObject defeatUI;
     public GameObject fadeOut;
+    public GameObject fadeIn;
 
     public Animator deathAnim;
 
@@ -19,6 +21,7 @@ public class Death : MonoBehaviour
     void Start()
     {
         playerManager.GetComponent<PlayerManager>();
+        cameraControls.GetComponent<CameraControls>();
     }
 
     // Update is called once per frame
@@ -27,6 +30,7 @@ public class Death : MonoBehaviour
         if(playerManager.OxBarNumber == 0)
         {
             playerManager.enabled = false;
+            cameraControls.enabled = false;
             timer += Time.deltaTime;
             deathAnim.SetTrigger("isDying");
 
@@ -48,6 +52,11 @@ public class Death : MonoBehaviour
                 defeatUI.SetActive(true);
 
                 Cursor.lockState = CursorLockMode.None;
+            }
+
+            if(timer >= 7f)
+            {
+                fadeIn.SetActive(false);
             }
         }
     }
