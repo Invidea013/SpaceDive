@@ -4,11 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Pickup_1
   - Fire
   - Ground
-  - Pickup_1
-  - Pickup_2
   - Victory
+  - Pickup_2
   layers:
   - Default
   - TransparentFX
@@ -16,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - 
   - 
   - 
   - 
