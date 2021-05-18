@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20350
+  m_Name: pb_Mesh17420
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3103,35 +3103,43 @@ PrefabInstance:
       objectReference: {fileID: 1631113884}
     - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: -1180
       objectReference: {fileID: 0}
     - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: -581
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -762
+      value: 284
       objectReference: {fileID: 0}
     - target: {fileID: 1297364573286755539, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 234
+      value: 995
       objectReference: {fileID: 0}
     - target: {fileID: 1837440297531782400, guid: 2a1cd27373d68b84a96373a23eb291c7, type: 3}
       propertyPath: m_RootOrder
