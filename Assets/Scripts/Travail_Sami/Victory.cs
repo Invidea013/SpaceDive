@@ -14,7 +14,7 @@ public class Victory : MonoBehaviour
     private float timer;
 
     private bool victory = false;
-    private bool codeTaskDone = false;
+    //private bool codeTaskDone = false;
     
     // Start is called before the first frame update
     void Start()

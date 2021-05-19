@@ -44,6 +44,7 @@ public class ButtonManager : MonoBehaviour
     public void PauseReturn()
     {
         pauseUI[0].SetActive(false);
+        PlayerPrefs.SetInt("Pause", 1);
         Cursor.lockState = CursorLockMode.Locked;
     }
 
