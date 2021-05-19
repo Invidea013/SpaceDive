@@ -8,6 +8,8 @@ public class ButtonManager : MonoBehaviour
 
     public GameObject[] menuUI;
     public GameObject[] optionUI;
+    public GameObject[] pauseUI;
+
     public void PlayButton()
     {
         SceneManager.LoadScene(1);
@@ -37,5 +39,35 @@ public class ButtonManager : MonoBehaviour
         menuUI[1].SetActive(true);
         menuUI[2].SetActive(true);
         optionUI[0].SetActive(false);
+    }
+
+    public void PauseReturn()
+    {
+        pauseUI[0].SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void SoundReturn()
+    {
+        pauseUI[1].SetActive(false);
+        pauseUI[0].SetActive(true);
+    }
+
+    public void ControlsReturn()
+    {
+        pauseUI[2].SetActive(false);
+        pauseUI[0].SetActive(true);
+    }
+
+    public void SoundMenu()
+    {
+        pauseUI[0].SetActive(false);
+        pauseUI[1].SetActive(true);
+    }
+
+    public void ControlsMenu()
+    {
+        pauseUI[0].SetActive(false);
+        pauseUI[1].SetActive(true);
     }
 }

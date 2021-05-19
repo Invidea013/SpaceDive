@@ -10,27 +10,19 @@ public class Pause : MonoBehaviour
     public GameObject controlsMenu;
 
     public PlayerManager playerManager;
+    public CameraControls cameraControls;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.None;
-    }
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            Cursor.lockState = CursorLockMode.None;
             pauseMenu.SetActive(true);
             playerManager.enabled = false;
+            cameraControls.enabled = false;
+            PlayerPrefs.SetInt("Pause", 0);
         }
-
-        if(PlayerPrefs.GetInt("Pause") == 1)
-        {
-            pauseMenu.SetActive(false);
-            playerManager.enabled = true;
-        }
-
     }
 }
