@@ -12,9 +12,9 @@ public class Victory : MonoBehaviour
     public GameObject fadeIn;
 
     private float timer;
-    public int tasksDone;
 
     private bool victory = false;
+    private bool codeTaskDone = false;
     
     // Start is called before the first frame update
     void Start()
@@ -66,7 +66,7 @@ public class Victory : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Victory") && tasksDone == 1)
+        if(other.CompareTag("Victory"))
         {
             playerManager.enabled = false;
             victory = true;
