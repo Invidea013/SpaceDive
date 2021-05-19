@@ -68,6 +68,6 @@ public class ButtonManager : MonoBehaviour
     public void ControlsMenu()
     {
         pauseUI[0].SetActive(false);
-        pauseUI[1].SetActive(true);
+        pauseUI[2].SetActive(true);
     }
 }
