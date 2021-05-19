@@ -21,6 +21,11 @@ public class Cinematic_Config : MonoBehaviour
             Timer = 0f;
         }
 
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(2);
+        }
+
         Cinematic();
     }
 
