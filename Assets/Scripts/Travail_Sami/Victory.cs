@@ -12,7 +12,9 @@ public class Victory : MonoBehaviour
     public GameObject fadeIn;
 
     private float timer;
+
     private bool victory = false;
+    //private bool codeTaskDone = false;
     
     // Start is called before the first frame update
     void Start()

@@ -9,6 +9,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     private RectTransform rectTrans;
     public Canvas myCanvas;
     private CanvasGroup canvasGroup;
+    private Vector3 iniPos;
 
     public int pipeID;
 
@@ -16,6 +17,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     {
         rectTrans = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        iniPos = transform.position;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -39,6 +41,11 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     {
         //Debug.Log("On Drag");
         rectTrans.anchoredPosition += eventData.delta / myCanvas.scaleFactor;
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = iniPos;
     }
 }
 
