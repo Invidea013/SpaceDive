@@ -25,9 +25,19 @@ public class Pause : MonoBehaviour
             PlayerPrefs.SetInt("Pause", 0);
         }
 
+        else if(Input.GetKeyDown(KeyCode.Escape) && PlayerPrefs.GetInt("Pause") == 0)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            PlayerPrefs.SetInt("Pause", 1);
+            pauseMenu.SetActive(false);
+            controlsMenu.SetActive(false);
+            soundMenu.SetActive(false);
+        }
+
         if(PlayerPrefs.GetInt("Pause") == 1)
         {
             player.SetActive(true);
+            pauseMenu.SetActive(false);
         }
     }
 }
