@@ -20,4 +20,10 @@ public class MJCodeManager : MonoBehaviour
             taskDone = true;
         }
     }
+
+    public void QuitTask()
+    {
+        mjCodeCanvas.SetActive(false);
+    }
+
 }
