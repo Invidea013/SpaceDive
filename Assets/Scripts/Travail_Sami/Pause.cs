@@ -8,9 +8,7 @@ public class Pause : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject soundMenu;
     public GameObject controlsMenu;
-
-    public PlayerManager playerManager;
-    public CameraControls cameraControls;
+    public GameObject player;
 
     void Start()
     {
@@ -23,15 +21,13 @@ public class Pause : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             pauseMenu.SetActive(true);
-            playerManager.enabled = false;
-            cameraControls.enabled = false;
+            player.SetActive(false);
             PlayerPrefs.SetInt("Pause", 0);
         }
 
         if(PlayerPrefs.GetInt("Pause") == 1)
         {
-            playerManager.enabled = true;
-            cameraControls.enabled = true;
+            player.SetActive(true);
         }
     }
 }
