@@ -5,6 +5,7 @@ using UnityEngine;
 public class MJCodeManager : MonoBehaviour
 {
     public GameObject mjCodeCanvas;
+    public GameObject freezPanel;
 
     public bool taskDone = false;
 
@@ -18,11 +19,19 @@ public class MJCodeManager : MonoBehaviour
         {
             //condition de victoire 
             taskDone = true;
+            freezPanel.SetActive(true);
+            StartCoroutine(TaskIsDone());
         }
     }
 
     public void QuitTask()
     {
+        mjCodeCanvas.SetActive(false);
+    }
+
+    IEnumerator TaskIsDone()
+    {
+        yield return new WaitForSeconds(2);
         mjCodeCanvas.SetActive(false);
     }
 
