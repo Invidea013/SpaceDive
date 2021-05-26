@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Victory
   - Pickup_2
+  - Circuit
   layers:
   - Default
   - TransparentFX
