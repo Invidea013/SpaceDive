@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7123395909876872107, guid: a0ebe123627ce90439caab1685099046, type: 3}
       propertyPath: m_Name
-      value: Spark2
+      value: Spark_Prefab
       objectReference: {fileID: 0}
     - target: {fileID: 7652879813019330658, guid: a0ebe123627ce90439caab1685099046, type: 3}
       propertyPath: lengthInSec
@@ -563,15 +563,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2792226813024420897, guid: 8d5ea7f6617b95942a024247e9c05e30, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.021285
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2792226813024420897, guid: 8d5ea7f6617b95942a024247e9c05e30, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -72.800575
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2792226813024420897, guid: 8d5ea7f6617b95942a024247e9c05e30, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.227295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2792226813024420897, guid: 8d5ea7f6617b95942a024247e9c05e30, type: 3}
       propertyPath: m_LocalRotation.w
