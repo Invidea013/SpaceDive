@@ -6,6 +6,8 @@ public class MJCodeLED : MonoBehaviour
 {
     public GameObject ledImage;
 
+
+
     public GameObject codeNum;
     public GameObject codeAlpha;
 
@@ -14,6 +16,7 @@ public class MJCodeLED : MonoBehaviour
     void Start()
     {
         ledImage.SetActive(false);
+        isTrue = false;
     }
 
     void Update()
@@ -22,7 +25,8 @@ public class MJCodeLED : MonoBehaviour
         {
             ledImage.SetActive(true);
             isTrue = true;
-}
+
+        }
         else 
         {
             ledImage.SetActive(false);

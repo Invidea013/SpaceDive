@@ -8,6 +8,9 @@ public class MJPipes : MonoBehaviour
     public int idNum;
     Image m_Image;
 
+    public AudioSource buttonClickSource;
+    public AudioClip[] buttonClick;
+
     public Sprite spriteOn;
     public Sprite spriteOff;
 
@@ -260,6 +263,8 @@ public class MJPipes : MonoBehaviour
 
     public void OnPipeRotate()
     {
+        buttonClickSource.PlayOneShot(buttonClick[0]);
+
         if (rotationState >= 3)
         {
             rotationState = -1;
