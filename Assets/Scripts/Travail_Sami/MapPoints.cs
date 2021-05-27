@@ -7,6 +7,21 @@ public class MapPoints : MonoBehaviour
 {
 
     public GameObject[] mapPoints;
+    public MJCodeManager codeManager;
+    public MJPipesManager pipeManager;
+
+    void Update()
+    {
+        if(codeManager.taskDone == true)
+        {
+            mapPoints[7].SetActive(false);
+        }
+
+        if(pipeManager.taskDone == true)
+        {
+            mapPoints[8].SetActive(false);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {

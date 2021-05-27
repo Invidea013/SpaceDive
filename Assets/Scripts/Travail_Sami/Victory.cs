@@ -15,12 +15,10 @@ public class Victory : MonoBehaviour
 
     private float timer;
 
-    private bool victory = false;
-
     // Update is called once per frame
     void Update()
     {
-        if(victory == true)
+        if(codeManager.taskDone == true && pipeManager.taskDone == true)
         {
             timer += Time.deltaTime;
 
@@ -58,13 +56,4 @@ public class Victory : MonoBehaviour
             }
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Cockpit") && codeManager.taskDone == true && pipeManager.taskDone == true)
-        {
-            victory = true;
-        }
-    }
-
 }
