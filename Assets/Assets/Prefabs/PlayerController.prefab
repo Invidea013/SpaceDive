@@ -664,10 +664,10 @@ MonoBehaviour:
   jumpHeight: 2
   gravity: -9.81
   groundDistance: 0.1
-  fuelUse: 0.0001
-  oxBreatheBase: 0.00001
-  oxBreathe: 0.00001
-  oxSprint: 0.00005
+  fuelUse: 0.001
+  oxBreatheBase: 0.0001
+  oxBreathe: 0.0001
+  oxSprint: 0.0005
   oxTimeDelay: 3
   OxBarNumber: 6
   canJump: 1
@@ -946,7 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40deb4364d1a4ea4baa1ed44f7af30c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 1000
+  mouseSensitivity: 500
   p_body: {fileID: 1837440297531782400}
 --- !u!1 &2249120847353002585
 GameObject:
