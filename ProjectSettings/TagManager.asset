@@ -10,6 +10,14 @@ TagManager:
   - Victory
   - Pickup_2
   - Circuit
+  - Code
+  - Cockpit
+  - Office_1
+  - Office_2
+  - Storage_1
+  - Storage_2
+  - Kitchen
+  - Reactor
   layers:
   - Default
   - TransparentFX
