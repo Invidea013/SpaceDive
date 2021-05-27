@@ -75,13 +75,12 @@ public class PlayerManager : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
+        oxBar.value -= oxBreatheBase;
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
             moveSpeed = sprintSpeed;
-            if (consOx)
-            {
-                oxBreathe = oxSprint;
-            }
+            oxBreathe = oxSprint;
         }
 
         else
@@ -101,26 +100,7 @@ public class PlayerManager : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        if (consOx == true)
-        {
-            oxBar.value -= oxBreathe;
-        }
-        
-        if(consOx == false)
-        {
-            oxTimeDelay -= Time.deltaTime;
-        }
-
-        if (oxTimeDelay <= 0f)
-        {
-            oxTimeDelay = 3f;
-            consOx = true;
-        }
-
-        if (OxBarNumber == 1)
-        {
-            AudioList[7].PlayOneShot(ClipList[1]);
-        }
+        oxTimeDelay -= Time.deltaTime;
 
         Jetpack();
         Flashlight();
@@ -241,6 +221,7 @@ public class PlayerManager : MonoBehaviour
         if (oxBar.value <= 0.2f)
         {
             oxUI.texture = oxTextures[5];
+
             OxBarNumber = 1;
         }
         
