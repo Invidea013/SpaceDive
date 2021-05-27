@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MJPipes : MonoBehaviour
 {
     public int idNum;
+    Image m_Image;
+
+    public Sprite spriteOn;
+    public Sprite spriteOff;
 
     public GameObject pipeCanvas;
 
@@ -17,6 +22,11 @@ public class MJPipes : MonoBehaviour
 
     public int rotationState;
 
+
+    private void Start()
+    {
+        m_Image = GetComponent<Image>();
+    }
     private void Update()
     {
         if (idNum == 0)
@@ -236,6 +246,15 @@ public class MJPipes : MonoBehaviour
             {
                 isPowered = false;
             }
+        }
+
+        if (isPowered == true)
+        {
+            m_Image.sprite = spriteOn;
+        }
+        else
+        {
+            m_Image.sprite = spriteOff;
         }
     }
 

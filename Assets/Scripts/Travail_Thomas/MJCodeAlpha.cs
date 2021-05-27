@@ -6,6 +6,9 @@ public class MJCodeAlpha : MonoBehaviour
 {
     public string[] codeListAlpha = { "A", "B", "C", "D", "E", "F" };
 
+    public AudioSource buttonClickSource;
+    public AudioClip[] buttonClick;
+
     public int listPos = 0;
 
     public GameObject codeText;
@@ -25,6 +28,8 @@ public class MJCodeAlpha : MonoBehaviour
 
     public void OnGoUp()
     {
+        buttonClickSource.PlayOneShot(buttonClick[0]);
+
         if (listPos <= 4)
         {
             listPos += 1;
@@ -38,6 +43,8 @@ public class MJCodeAlpha : MonoBehaviour
 
     public void OnGoDown()
     {
+        buttonClickSource.PlayOneShot(buttonClick[0]);
+
         if (listPos >= 1)
         {
             listPos -= 1;
