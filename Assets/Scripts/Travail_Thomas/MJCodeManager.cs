@@ -6,6 +6,10 @@ public class MJCodeManager : MonoBehaviour
 {
     public GameObject mjCodeCanvas;
     public GameObject freezPanel;
+    public GameObject codeTrigger;
+
+    public PlayerManager playerManager;
+    public CameraControls cameraControls;
 
     public AudioSource soundSource;
     public AudioClip endClip;
@@ -18,27 +22,41 @@ public class MJCodeManager : MonoBehaviour
     public GameObject led2;
     public GameObject led3;
 
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     void Update()
     {
+        playerManager.enabled = false;
+        cameraControls.enabled = false;
+
         if (led1.GetComponent<MJCodeLED>().isTrue == true && led2.GetComponent<MJCodeLED>().isTrue == true && led3.GetComponent<MJCodeLED>().isTrue == true)
         {
             //condition de victoire 
             taskDone = true;
             freezPanel.SetActive(true);
             StartCoroutine(TaskIsDone());
-            
         }
     }
 
     public void QuitTask()
     {
         mjCodeCanvas.SetActive(false);
+        playerManager.enabled = true;
+        cameraControls.enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     IEnumerator TaskIsDone()
     {
         yield return new WaitForSeconds(2);
         mjCodeCanvas.SetActive(false);
+        playerManager.enabled = true;
+        cameraControls.enabled = true;
+        Destroy(codeTrigger);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void PlayLEDOn()

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Victory : MonoBehaviour
 {
     public PlayerManager playerManager;
+    public MJCodeManager codeManager;
+    public MJPipesManager pipeManager;
 
     public GameObject playerUI;
     public GameObject[] victoryUI;
@@ -14,13 +16,6 @@ public class Victory : MonoBehaviour
     private float timer;
 
     private bool victory = false;
-    //private bool codeTaskDone = false;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        playerManager.GetComponent<PlayerManager>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -66,10 +61,10 @@ public class Victory : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Victory"))
+        if(other.CompareTag("Cockpit") && codeManager.taskDone == true && pipeManager.taskDone == true)
         {
-            playerManager.enabled = false;
             victory = true;
         }
     }
+
 }
