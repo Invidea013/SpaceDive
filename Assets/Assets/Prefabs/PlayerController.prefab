@@ -664,10 +664,10 @@ MonoBehaviour:
   jumpHeight: 2
   gravity: -9.81
   groundDistance: 0.1
-  fuelUse: 0.001
-  oxBreatheBase: 0.0001
-  oxBreathe: 0.0001
-  oxSprint: 0.0005
+  fuelUse: 0.0001
+  oxBreatheBase: 0.00004
+  oxBreathe: 0.00004
+  oxSprint: 0.00008
   oxTimeDelay: 3
   OxBarNumber: 6
   canJump: 1
