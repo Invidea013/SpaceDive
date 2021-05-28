@@ -10,6 +10,7 @@ public class MJCodeManager : MonoBehaviour
 
     public PlayerManager playerManager;
     public CameraControls cameraControls;
+    public Pause pause;
 
     public AudioSource soundSource;
     public AudioClip endClip;
@@ -29,8 +30,15 @@ public class MJCodeManager : MonoBehaviour
 
     void Update()
     {
+        playerManager.AudioList[0].Stop();
+        playerManager.AudioList[1].Stop();
+        playerManager.AudioList[2].Stop();
+
         playerManager.enabled = false;
         cameraControls.enabled = false;
+        pause.enabled = false;
+
+        Cursor.lockState = CursorLockMode.None;
 
         if (led1.GetComponent<MJCodeLED>().isTrue == true && led2.GetComponent<MJCodeLED>().isTrue == true && led3.GetComponent<MJCodeLED>().isTrue == true)
         {
@@ -44,18 +52,26 @@ public class MJCodeManager : MonoBehaviour
     public void QuitTask()
     {
         mjCodeCanvas.SetActive(false);
+
         playerManager.enabled = true;
         cameraControls.enabled = true;
+        pause.enabled = true;
+
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     IEnumerator TaskIsDone()
     {
         yield return new WaitForSeconds(2);
+
         mjCodeCanvas.SetActive(false);
+
         playerManager.enabled = true;
         cameraControls.enabled = true;
+        pause.enabled = true;
+
         Destroy(codeTrigger);
+
         Cursor.lockState = CursorLockMode.Locked;
     }
 

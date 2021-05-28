@@ -10,6 +10,7 @@ public class MJPipesManager : MonoBehaviour
 
     public PlayerManager playerManager;
     public CameraControls cameraControls;
+    public Pause pause;
 
     public bool taskDone = false;
 
@@ -18,10 +19,17 @@ public class MJPipesManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    private void Update()
+    void Update()
     {
+        playerManager.AudioList[0].Stop();
+        playerManager.AudioList[1].Stop();
+        playerManager.AudioList[2].Stop();
+
         playerManager.enabled = false;
         cameraControls.enabled = false;
+        pause.enabled = false;
+
+        Cursor.lockState = CursorLockMode.None;
 
         if (generator.GetComponent<MJPipes>().isPowered == true)
         {
@@ -33,17 +41,24 @@ public class MJPipesManager : MonoBehaviour
     public void QuitTask()
     {
         mjCodeCanvas.SetActive(false);
+
         playerManager.enabled = true;
         cameraControls.enabled = true;
+        pause.enabled = true;
+
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     IEnumerator TaskIsDone()
     {
         yield return new WaitForSeconds(2);
+
         playerManager.enabled = true;
         cameraControls.enabled = true;
+        pause.enabled = true;
+
         Cursor.lockState = CursorLockMode.Locked;
+
         QuitTask();
     }
 }
